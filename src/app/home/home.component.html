@@ -10,12 +10,12 @@
         </tr>
         <tr *ngFor="let fruit of fruits2; let i = index">
             <td>{{(i + 1)}}</td>
-            <td>{{fruit.name}}</td>
+            <td>{{fruit.name | uppercase}}</td>
             <td class="right">
-                <span [ngClass]="{ 'negative': fruit.price < 0 }">{{fruit.price}}</span>
+                <span [ngClass]="{ 'negative': fruit.price < 0 }">{{fruit.price | currency: 'VND':"symbol":"1.2"}}</span>
             </td>
             <td class="right">
-                <span *ngIf="fruit.discount">On sale</span>
+                <span>{{fruit.discount | onSale | uppercase}}</span>
             </td>
         </tr>
        
