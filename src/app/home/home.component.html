@@ -1,7 +1,7 @@
 <div class="test">
    <h3>This is Hone component</h3>
     <h1>Fruits</h1>
-    <table class="table">
+    <!-- <table class="table">
         <tr>
             <th>no.</th>
             <th>fruit name</th>
@@ -19,7 +19,16 @@
             </td>
         </tr>
        
-    </table>
+    </table> -->
+    Provincy/City:
+    <select name="city" id="city" (change)="handleChaneCity($event)">
+        <option *ngFor="let data of vietnamData" [value]="data.city">{{ data.city }}</option>
+    </select>
+    <br>
+    District:
+    <select name="district" id="district">
+        <option *ngFor="let district of districts" value="vlok">{{ district }}</option>
+    </select>
     
 </div>
 
