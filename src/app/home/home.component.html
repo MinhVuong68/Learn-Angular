@@ -1,13 +1,25 @@
 <div class="test">
    <h3>This is Hone component</h3>
-   <h2>Welcome {{name}}</h2>
-   <br>
-   <input type="text" [(ngModel)]="age">
-   <br>
-   <!-- <h2 *ngIf="age > 18">You are too old!</h2>
-   <h2 *ngIf="age <= 18">You are still young!</h2> -->
-   
-   <div *ngIf="age <= 18; then young else old"></div>
-   <ng-template #young>You are still young!</ng-template>
-   <ng-template #old>You are too old!</ng-template>
+    <h1>Fruits</h1>
+    <table class="table">
+        <tr>
+            <th>no.</th>
+            <th>fruit name</th>
+            <th>price</th>
+            <th>discount</th>
+        </tr>
+        <tr *ngFor="let fruit of fruits2; let i = index">
+            <td>{{(i + 1)}}</td>
+            <td>{{fruit.name}}</td>
+            <td class="right">
+                <span [ngClass]="{ 'negative': fruit.price < 0 }">{{fruit.price}}</span>
+            </td>
+            <td class="right">
+                <span *ngIf="fruit.discount">On sale</span>
+            </td>
+        </tr>
+       
+    </table>
+    
 </div>
+
